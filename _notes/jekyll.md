@@ -29,7 +29,11 @@ live server
 jekyll serve --watch
 ```
 
-🌱
+
+# How to add Search Bar with [[Lunr.js]]
+https://lunrjs.com/guides/upgrading.html
+
+
 
 # Troubleshoot
 

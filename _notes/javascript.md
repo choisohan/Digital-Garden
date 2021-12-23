@@ -878,6 +878,8 @@ var data = JSON.parse(window.localStorage.getItem('user'));
 ```
 
 
+
+
 # web version 8(namespaced) vs web version 8(modular, ESM)
 
 

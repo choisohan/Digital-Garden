@@ -2,9 +2,83 @@
     span{
         padding: 10px;
     }
+    #search-results{
+        background-color: #131313;
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+    #search-results a {
+        /*border-bottom: 1px solid rgb(51, 51, 51);*/
+        padding : 10px 20px;
+        border-color: transparent;
+    }
+    #search-results a h4{
+        margin: 0px;
+    }
+    #search-results a h5{
+        color:rgb(163, 163, 163);
+        font-weight: 100;
+        margin: 0px;
+    }
+    #search-results a:hover{
+        color: #90a955; 
+        background-color: #000000;
+    }
+    .title{
+        font-size : 23px; 
+        text-decoration: none;
+    }
+    .content{
+        font-size : 16px;
+        margin: 0px;
+    }
+
+    input{
+        background-color: #111111;
+        border-radius: 5px;
+        border-color: grey;
+        border-style: solid;
+        border-width:1px;
+        width: 170px; 
+        padding: 5px;
+    }
 </style>
+
 
 <div>
     <span><a class="internal-link" href="{{ site.baseurl }}/"><b>🌱{{ site.title }}</b></a></span>
     <span><a href='http://happping.co'> 🏛Visit Musée</a></span>
+
+    <span>
+        <input type="text" id="search-box" name="query" onchange="search()" >
+        <!--button onclick="search()">Submit</button-->
+    </span>
+
+
+    <div id = "search-results"></div>
 </div>
+
+
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+
+<script>
+
+
+window.store = {
+      {% for note in site.notes %}
+        "{{ note.url | slugify }}": {
+          "title": "{{ note.title | xml_escape }}",
+          "content": {{ note.content | strip_html | strip_newlines | jsonify }},
+          "url": "{{ note.url | xml_escape }}"
+        }
+        {% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    };
+    
+
+
+
+</script>
+
+<script src = '/search.js'></script>
