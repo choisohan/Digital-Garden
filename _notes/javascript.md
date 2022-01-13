@@ -528,6 +528,25 @@ for(var i=0; i<linkElements.length; i++){
 ```
 
 
+## Tweak Global CSS by Javascript
+https://stackoverflow.com/questions/1409225/changing-a-css-rule-set-from-javascript
+```js
+function getCSSRule(ruleName) {
+    ruleName = ruleName.toLowerCase();
+    var result = null;
+    var find = Array.prototype.find;
+
+    find.call(document.styleSheets, styleSheet => {
+        result = find.call(styleSheet.cssRules, cssRule => {
+            return cssRule instanceof CSSStyleRule 
+                && cssRule.selectorText.toLowerCase() == ruleName;
+        });
+        return result != null;
+    });
+    return result;
+}
+
+```
 ## Mouse Cursor Style
 ```js
 document.body.style.cursor = "pointer"

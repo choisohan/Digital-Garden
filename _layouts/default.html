@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
   {% include head.html %}
   <body>
     <nav>{% include nav.html %}</nav>
     <div class="wrapper">
-      <main>{{ content }}</main>
+      <main style= "min-height: 500px">{{ content }}</main>
       <footer>{% include footer.html %}</footer>
     </div>
 
     {% include link-previews.html wrapperQuerySelector="content" %}
   </body>
+
 </html>
+
+
+<script>
+  const images = document.getElementsByTagName("img");
+  for(var i = 0; i<images.length; i++){
+    const img = images[i].cloneNode(true)
+    const parent = images[i].parentElement;
+    const fig= document.createElement("figure");
+    const figCaption = document.createElement("figcaption")
+    figCaption.innerText = images[i].alt;
+    fig.append(img);
+    fig.append(figCaption)
+    fig.style.textAlign = 'center'
+    fig.style.fontSize= '16px'; 
+    parent.replaceChild(fig , images[i])
+  }
+
+  const videos = document.querySelectorAll("video");
+  videos.forEach(v=>{
+    v.volume=0;
+    v.muted = true;  
+    v.autoplay=true; 
+    v.loop=true; 
+    v.controls=true; 
+  })
+  
+</script>

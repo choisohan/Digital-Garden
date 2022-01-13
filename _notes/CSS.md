@@ -230,7 +230,17 @@ https://www.digitalocean.com/community/tutorials/css-scrollbars
 
 
 
+### Grainy Gradients
+https://css-tricks.com/grainy-gradients/
 
+
+
+# prefix
+```css
+/*any element with prefix*/
+div[id^="prefix"] {
+}
+```
 
 # More
 [[Creating Avatar Generator with CSS]]

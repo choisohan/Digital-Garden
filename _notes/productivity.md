@@ -92,19 +92,33 @@ tag : [[automation]]
  [[MS To Do]] x [[Apples Shorcuts]]
 
 
-## Receive 
+
+
+
+
+
+
+
 
 
 
 
 
 # 4. Collaboration Tools
+### [[Calendly]] , the great way to share my availbility to set meeting time with teams in the different time zone
+
+Pro
+-  Freemium
+- lots of integration tools such as [[zapier]]
+- gmail extension and time pool option is really useful 
+ 
+Con
+- Customize color option is not available for free user
+
+* Trouble shoot : "I look free while I am busy on google calendar!""
+1. go to google calendar setting
+2. genernal -> events from gmail -> privacy of email events : **calendar default**
 
 
 
 
----
-
-
-### other tools
-[[Zapier]]

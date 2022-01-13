@@ -47,6 +47,7 @@
   var transitionDurationMs = 100;
 
   var iframe = document.getElementById('link-preview-iframe')
+  iframe.volume = 'silent'
   var tooltipWrapper = document.getElementById('tooltip-wrapper')
   var tooltipContent = document.getElementById('tooltip-content')
 
@@ -66,15 +67,15 @@
     var top = window.pageYOffset || document.documentElement.scrollTop
 
     if (event.target.host === window.location.host) {
-      iframe.src = event.target.href
+      iframe.src = event.target.href 
       iframe.onload = function() {
         tooltipContentHtml = ''
         tooltipContentHtml += '<div style="font-weight: bold;">' + iframe.contentWindow.document.querySelector('h1').innerHTML + '</div>'
         tooltipContentHtml += iframe.contentWindow.document.querySelector('content').innerHTML
-
         tooltipContent.innerHTML = tooltipContentHtml
 
         tooltipWrapper.style.display = 'block';
+        tooltipWrapper.muted = true; 
         setTimeout(function() {
           tooltipWrapper.style.opacity = 1;
         }, 1)

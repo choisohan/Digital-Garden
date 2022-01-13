@@ -6,3 +6,26 @@ Based on [Setting up your own digital garden with Jekyll](https://maximevaillanc
 # Run
 jekyll serve --watch
 http://localhost:4000
+
+# Important
+1. Save image in "assets" folder
+
+
+
+# To do
+[x] add search bar
+[x] Spacebar distance
+[x] markdown image size adjustment 
+[x] fix code letter space
+[ ] index page = graph + journal post list
+[ ] text wrap around image
+[ ] Bigger letter on paragraph
+[ ] search result show related area
+[ ] click image and bigger (lightbox)
+[ ] preview div -> mute audo
+[ ] graph initial zoom out 
+
+# contents
+[ ] optimize videos
+[ ] my page
+[ ] bluga page
