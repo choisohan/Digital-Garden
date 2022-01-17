@@ -1,0 +1,67 @@
+<style>
+    .image-gallery {overflow: auto; margin-left: -1%!important; display: flex;}
+    .image-gallery li {float: left; display: block; margin: 0 ; flex:1 ; }
+    .image-gallery li  {text-align: center; text-decoration: none!important; color: #777; }
+    .image-gallery li  span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 0px 0;}
+    .image-gallery li img , .image-gallery li video{
+        max-height:200px; 
+        align-items:center; /* vertical alignment */
+    }
+    video:hover{pointer-events: none}
+    .grid {
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(150px, 1fr));
+        grid-gap: 10px;
+    }
+    .grid li img , .grid li video{
+        height:100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        align-items:center; 
+    }
+    video::-webkit-media-controls {
+    display:none !important;
+}
+    
+    </style>
+
+{% assign keywords = include.search  | split :"," %}
+{% assign imgExt = ".jpg,.jpeg,.png,.gif,.JPG,.JPEG,.PNG,.GIF" | split :"," %}
+{% assign videoExt = ".mov,.mp4,.MOV,.MP4" | split :"," %}
+{% assign itemArray = "" | split :" " %}
+
+
+
+{% for file in site.static_files %}
+    {% for key in keywords %}
+        {% if file.path  contains key %}
+            {% assign itemArray = itemArray | push :  file %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+
+{% assign className ="image-gallery" %}
+
+
+{% if  itemArray.size > 4 %}
+    {% assign className = className | append : " grid" %}
+{% endif %}
+
+<ul class="{{className}}">
+{% for file in itemArray %}
+
+    <li><a href = "{{ file.path }}">
+        {% for extension in imgExt %}
+            {% if file.extname == extension %}
+                <img src="{{file.path}}" title= "{{file.path }}">
+            {% endif %}
+        {% endfor %}
+
+        {% for extension in videoExt %}
+            {% if file.extname == extension %}
+                <video autoplay muted loop controls ><source src="{{file.path}}"></video>
+            {% endif %}
+        {% endfor %}
+    </a></li>
+{% endfor %}
+</ul>

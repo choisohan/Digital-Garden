@@ -1,3 +1,5 @@
+require 'time'
+
 # frozen_string_literal: true
 class BidirectionalLinksGenerator < Jekyll::Generator
   def generate(site)
@@ -58,10 +60,11 @@ class BidirectionalLinksGenerator < Jekyll::Generator
       current_note.content = current_note.content.gsub(
         /\[\[(.*)\]\]/i, # match on the remaining double-bracket links
         <<~HTML.chomp    # replace with this HTML (\\1 is what was inside the brackets)
-          <span title='There is no note that matches this link.' class='invalid-link'>
-            <span class='invalid-link-brackets'>[[</span>
+          <span title='' class='invalid-link'>
+            <label class='invalid-link-brackets'></label>
             \\1
-            <span class='invalid-link-brackets'>]]</span></span>
+            <label class='invalid-link-brackets'></label>
+            
         HTML
       )
     end
@@ -78,6 +81,8 @@ class BidirectionalLinksGenerator < Jekyll::Generator
         id: note_id_from_note(current_note),
         path: "#{site.baseurl}#{current_note.url}#{link_extension}",
         label: current_note.data['title'],
+        categories: current_note.data['categories'],
+        last_modified_at: Time.now() - Time.parse(current_note.data['last_modified_at'].to_s)
       } unless current_note.path.include?('_notes/index.html')
 
       # Edges: Jekyll

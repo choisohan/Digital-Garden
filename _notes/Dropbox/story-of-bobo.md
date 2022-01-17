@@ -1,16 +1,11 @@
 ---
-layout: page
+layout: journal
 title: The Story of Bobo
-permalink: /story-of-bobo
-categories: [journal]
 description: 'Realtime Project playing with interactive baby orangutan Bobo'
-status: published
+tag: [journal]
 
 ---
 
-<div class= "fillBox" markdown="1">
-# The story of Bobo
-</div>
 
 # 1. How it all began​
 

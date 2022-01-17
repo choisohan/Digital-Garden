@@ -1,8 +1,8 @@
 ---
-layout: page
+layout: journal
 title: About Min
-categories: [journal]
-status: published
+description: Who is Min and What she does
+tag: [journal]
 ---
 
 

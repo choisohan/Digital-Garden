@@ -1,7 +1,6 @@
 ---
-title: How to Customize Digital Garden with Jekyll
+title: Making Of Digital Garden
 ---
-
 
 Based on [Setting up your own digital garden with Jekyll](https://maximevaillancourt.com/blog/setting-up-your-own-digital-garden-with-jekyll)
 
@@ -34,7 +33,7 @@ exclude:
 _OnlyMe
 _Templates
 _Dropbox/.drobox.cache
-_ignore*
+.ignore
 .dropbox*
 desktop.ini
 
@@ -45,4 +44,8 @@ desktop.ini
 # Adding gallery layout
 https://jekyllcodex.org/without-plugins/
 
-# 
+
+
+
+
+# D3 graph tweak
