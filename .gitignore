@@ -18,3 +18,7 @@ _includes/notes_graph.json
 .trash
 _OnlyMe
 _Templates
+_Dropbox/.drobox.cache
+.dropbox*
+.ignore
+desktop.ini

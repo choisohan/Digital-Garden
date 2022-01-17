@@ -1,6 +1,16 @@
 title:               Happping Garden
 include:             ['_pages']
-exclude:             ['_includes/notes_graph.json']
+exclude:
+- _includes/notes_graph.json
+- _notes/Dropbox/_OnlyMe
+- _notes/Dropbox/.dropbox.cache
+- _notes/Dropbox/.obsidian
+- _notes/Dropbox/.trash
+- _notes/Dropbox/.dropbox
+- _notes/Dropbox/desktop.ini
+- _notes/Dropbox/_Templates
+
+
 # You may need to change the base URL depending on your deploy configuration.
 # Specifically, when using GitHub Pages, the baseurl should point to where GitHub
 # Pages deploys your repository (which is usually the repository name).

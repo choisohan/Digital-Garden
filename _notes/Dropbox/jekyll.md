@@ -139,4 +139,4 @@ note : markdown doens't support column so you should use html and css
 
 
 # Extra
-- [[How to Customize Digital Garden with Jekyll]]
+- [[Making Of Digital Garden]]
