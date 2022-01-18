@@ -61,9 +61,9 @@ class BidirectionalLinksGenerator < Jekyll::Generator
         /\[\[(.*)\]\]/i, # match on the remaining double-bracket links
         <<~HTML.chomp    # replace with this HTML (\\1 is what was inside the brackets)
           <span title='' class='invalid-link'>
-            <label class='invalid-link-brackets'></label>
+            <span class='invalid-link-brackets'>[[</span>
             \\1
-            <label class='invalid-link-brackets'></label>
+            <span class='invalid-link-brackets'>]]</span></span>
             
         HTML
       )
@@ -81,7 +81,7 @@ class BidirectionalLinksGenerator < Jekyll::Generator
         id: note_id_from_note(current_note),
         path: "#{site.baseurl}#{current_note.url}#{link_extension}",
         label: current_note.data['title'],
-        categories: current_note.data['categories'],
+        tag: current_note.data['tag'],
         last_modified_at: Time.now() - Time.parse(current_note.data['last_modified_at'].to_s)
       } unless current_note.path.include?('_notes/index.html')
 

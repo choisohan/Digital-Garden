@@ -25,13 +25,9 @@ Fast foward to an ordinary weekend in 2020, me and my fiancé Tom did a skype ch
 
 
 # 2. Making Of Bobo​
-<div class="column">
-<div><video ><source src="assets/bobo/Hanging_A_004_low.mp4"></video></div>
-<div><video ><source src="assets/bobo/WalkCycle_A_003_updateRig2.low.mp4"></video></div>
-<div><video ><source src="assets/bobo/climbingUp_A_002_rigUpdate2_low.mp4"></video></div>
-</div>
 
 
+{% include gallery.html search ="Hanging_A_004_low,WalkCycle_A_003_updateRig2,climbingUp_A_002_rigUpdate2_low" %}
 
 
 Even after I made up my mind, It was not clear if this project would be successful. Would this be fun for people? Could I even make this? I had thousands of worries in my head. I had to start figuring it out. 
@@ -149,11 +145,8 @@ That lesson is not going to be same as their own kind could give.
 
 # 4. Bobo's face​
 
-<div class ="column">
-<span> <video><source src="assets/bobo/1022_2_Trim2.mp4"> </video> </span>
-<span> <img src = "assets/bobo/0911_shapeEditor.gif"> </span>
-</div>
 
+{% include gallery.html search ="1022_2_Trim2,0911_shapeEditor"  %}
 
 There are two systems I had to create just for bobo's face. One is the Blend shape manager in maya. This helps me build complex blendshape trees in the very intuitive UI. I want to share this online as open source when it's finished but I am not sure when that would be... (far to go...)
 
@@ -168,8 +161,7 @@ On facial, it's still almost start point.
 
 
 # 5. How Does Bobo Interact?​
-<center><video width = "700" ><source src="assets/bobo/smilypongo_short_2.mp4"> </video></center>
-
+{% include gallery.html search="smilypongo_short_2"%}
 
 
 
@@ -179,11 +171,9 @@ I am not an expert so I don't think I have a right to explain, but for anyone wh
 
 Using OpenCV opens the accessibility a lot. It's cheaper for me and at the same time, anybody can try at their home without any special devices.
 
-<div class="column">
-<div><img src= "assets/bobo/1107.gif" width ="40%"></div>
-<div><video width ="40%"><source src="assets/bobo/bobosMonitor.mp4"> </video></div>
-</div>
 
+
+{% include gallery.html search="1107,bobosMonitor"%}
 
 
 
@@ -212,8 +202,8 @@ Using OpenCV opens the accessibility a lot. It's cheaper for me and at the same 
 </div>
 
 <div class= "column">
-<div>
-<video muted=true><source src="assets/bobo/instaBobo.mp4" ></video>
+<div markdown="1" style= "min-width :300px">
+{% include gallery.html search="instaBobo"%}
 </div>
 <div markdown= "1">
 This Project is still in progress therefore this post will keep being updated with more information and more demos. If you want to get noticed whenever I update this article, please sign up on mail subscription or follow me on social media.

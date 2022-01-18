@@ -38,6 +38,7 @@ footer {
   //padding-top: 10em;
   bottom: 0; 
   position:static;
+  margin-top:150px;
 }
 
 img {
@@ -68,9 +69,12 @@ button{
 hr {
   width: 100%;
   border: 0;
-  height: 200px;
+  height: 60px;
   margin: 1.5em 0;
   /*background: $color-border;*/
+}
+strong{
+  text-decoration: underline wavy white ;
 }
 p{
   margin-top: 25px; 
@@ -87,8 +91,8 @@ h6 {
   padding-bottom: 0;
   font-weight: normal;
 }
-h1{margin-top: 100px; margin-bottom: 10px;}
-h2{margin-top: 20px; margin-bottom: 20px;}
+h1{margin-top: 100px; margin-bottom: 10px; text-shadow: 5px 5px black;}
+h2{margin-top: 20px; margin-bottom: 20px; text-shadow: 5px 5px black;}
 h3{margin-top: 20px; margin-bottom: 20px;}
 h4{margin-top: 20px; margin-bottom: 7px;}
 h5{margin-top: 10px; margin-bottom: 5px;}
@@ -257,15 +261,16 @@ code {
 }
 
 .invalid-link {
-  color: #666666;
   cursor: help;
   /*background: #fafafa;*/ 
   padding: 0 0.1em;
 }
 
 .invalid-link-brackets {
-  color: #666666;
   cursor: help;
+  padding: 0px; 
+  margin: 0px;
+  color:black
 }
 
 

@@ -73,8 +73,10 @@
 
 
     
-    var search_categories = "{{ include.categories }}"
-    console.log(search_categories)
+    var search = "{{ include.tag }}";
+    search = (search=="") ? null : "{{ include.tag }}"
+
+    console.log(search)
 
     const nodeSize = {};
 
@@ -288,7 +290,7 @@
       node = node
         .enter()
         .append("circle")
-        .filter(function(d) { return d.categories == search_categories })
+        .filter(function(d) { return d.categories == search })
         .attr("r", (d) => {
           return nodeSize[d.id];
         })
@@ -302,7 +304,7 @@
       link = link.enter()
       .append("line")
       .filter(function(d){
-        return ( d.source.categories == search_categories & d.target.categories == search_categories ) ? true : false; 
+        return ( d.source.tag == search & d.target.tag == search ) ? true : false; 
       })
       .attr("stroke-width", STROKE).merge(link);
         
@@ -311,7 +313,7 @@
       text = text
         .enter()
         .append("text")
-        .filter(function(d) { return d.categories == search_categories })
+        .filter(function(d) { return d.tag == search })
         .text((d) => shorten(d.label.replace(/_*/g, ""), MAX_LABEL_LENGTH))
         .attr("font-size", `${FONT_SIZE}px`)
         .attr("text-anchor", "middle")

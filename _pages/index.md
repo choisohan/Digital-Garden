@@ -4,4 +4,4 @@ layout: page
 
 ---
 
-{% include notes_graph.html %}
+{% include notes_graph.html search=""%}

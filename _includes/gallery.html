@@ -4,7 +4,7 @@
     .image-gallery li  {text-align: center; text-decoration: none!important; color: #777; }
     .image-gallery li  span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 0px 0;}
     .image-gallery li img , .image-gallery li video{
-        max-height:200px; 
+       /* max-height:250px; */
         align-items:center; /* vertical alignment */
     }
     video:hover{pointer-events: none}
@@ -13,12 +13,25 @@
         grid-template-columns: repeat( auto-fit, minmax(150px, 1fr));
         grid-gap: 10px;
     }
-    .grid li img , .grid li video{
+    .grid li img , .grid li {
         height:100%;
         aspect-ratio: 1/1;
         object-fit: cover;
         align-items:center; 
     }
+    .equal{
+        align-items:center; /* vertical alignment */
+        text-align :center; /* horizontal alignment */
+        justify-content: center; 
+    }
+    .equal li{
+        flex-grow: 1;
+    }
+    .equal li img , .equal li video{
+        width:100%;
+        align-items:center; 
+    }
+
     video::-webkit-media-controls {
     display:none !important;
 }
@@ -42,9 +55,10 @@
 
 {% assign className ="image-gallery" %}
 
-
 {% if  itemArray.size > 4 %}
     {% assign className = className | append : " grid" %}
+{% else %}
+    {% assign className = className | append : " equal" %}
 {% endif %}
 
 <ul class="{{className}}">
