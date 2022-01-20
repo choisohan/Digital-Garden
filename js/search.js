@@ -20,9 +20,9 @@ var documents = [];
             'content' : window.store[key].content
           })
         }
-  
+
       }) 
-  
+
       var results = idx.search(searchTerm)
       updateResult(results);
     }
@@ -43,11 +43,11 @@ var documents = [];
     empty()
     for (var i = 0; i< results.length; i++){
       var item = store[results[i].ref ];
-      
+
 
       var span = document.createElement("A");
       span.href = item.url;
-      
+
       var title = document.createElement("H4");
       title.classList.add('title')
       title.innerText = item.title;
@@ -64,4 +64,4 @@ var documents = [];
 
   }
 
-}
+} 

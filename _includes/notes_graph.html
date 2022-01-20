@@ -73,10 +73,10 @@
 
 
     
-    var search = "{{ include.tag }}";
-    search = (search=="") ? null : "{{ include.tag }}"
+    var search_keyword = "{{ include.tag }}";
+    search_keyword = (search_keyword=="") ? null : "{{ include.tag }}"
 
-    console.log(search)
+    console.log(search_keyword)
 
     const nodeSize = {};
 
@@ -290,7 +290,7 @@
       node = node
         .enter()
         .append("circle")
-        .filter(function(d) { return d.categories == search })
+        .filter(function(d) { return d.tag == search_keyword })
         .attr("r", (d) => {
           return nodeSize[d.id];
         })
@@ -304,7 +304,7 @@
       link = link.enter()
       .append("line")
       .filter(function(d){
-        return ( d.source.tag == search & d.target.tag == search ) ? true : false; 
+        return ( d.source.tag == search_keyword & d.target.tag == search_keyword ) ? true : false; 
       })
       .attr("stroke-width", STROKE).merge(link);
         
@@ -313,7 +313,7 @@
       text = text
         .enter()
         .append("text")
-        .filter(function(d) { return d.tag == search })
+        .filter(function(d) { return d.tag == search_keyword })
         .text((d) => shorten(d.label.replace(/_*/g, ""), MAX_LABEL_LENGTH))
         .attr("font-size", `${FONT_SIZE}px`)
         .attr("text-anchor", "middle")
@@ -328,8 +328,8 @@
 
       //console.log(d.last_modified_at)
 
-      node.attr("latest", (d) =>( d.last_modified_at < 500000) ? true: null );
-      text.attr("latest", (d) =>( d.last_modified_at < 500000) ? true: null );
+      node.attr("latest", (d) =>( d.last_modified_at < 200000) ? true: null );
+      text.attr("latest", (d) =>( d.last_modified_at < 200000) ? true: null );
 
 
       simulation.nodes(nodesData);

@@ -9,7 +9,7 @@ exclude:
 - _notes/Dropbox/.dropbox
 - _notes/Dropbox/desktop.ini
 - _notes/Dropbox/_Templates
-- .ignore
+- _notes/Dropbox/journals/.ignore
 
 
 # You may need to change the base URL depending on your deploy configuration.

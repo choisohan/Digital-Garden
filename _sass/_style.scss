@@ -62,9 +62,22 @@ blockquote {
 }
 button{
   background-color: black;
+  color: white; 
+  font-size: 15px;
+  letter-spacing:.2rem;
   padding: 10px;
   border: none;
   border-radius: 10px;
+  box-shadow: 2px 2px white;
+}
+button:hover{
+  -webkit-animation:rainbow 5s infinite;
+  -ms-animation:rainbow 5s infinite;
+  -o-animation:rainbow 5s infinite;
+  animation:rainbow 5s infinite;
+  box-shadow: 0px 0px white;
+  transform: translate(2px);
+
 }
 hr {
   width: 100%;
@@ -74,11 +87,16 @@ hr {
   /*background: $color-border;*/
 }
 strong{
-  text-decoration: underline wavy white ;
+  font-weight: 400;
+  text-decoration: underline wavy rgb(255, 187, 235) ;
 }
 p{
   margin-top: 25px; 
   margin-bottom: 25px; 
+}
+li p{
+  margin-top: 0px; 
+  margin-bottom: 0px; 
 }
 h1,
 h2,
@@ -235,6 +253,7 @@ nav {
   margin: 1em 0 3em;
 }
 
+
 #notes-entry-container {
   display: grid;
   grid-gap: 2em;
@@ -263,7 +282,7 @@ code {
 .invalid-link {
   cursor: help;
   /*background: #fafafa;*/ 
-  padding: 0 0.1em;
+  padding: 0 0.0em;
 }
 
 .invalid-link-brackets {

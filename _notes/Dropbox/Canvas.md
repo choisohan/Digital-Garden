@@ -285,6 +285,8 @@ function updateParticles(){
 ```
 
 
+---
+
 # 5. Using Canvas with Mobile Device
 tag : [[Safari]] , [[mobile]] , [[ios]]]
 

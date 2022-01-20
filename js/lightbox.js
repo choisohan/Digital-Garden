@@ -63,8 +63,8 @@ function setGallery(el) {
 		Object.keys(gallery_elements).forEach(function (k) {
 			if(gallery_elements[k].classList.contains('current')) currentkey = k;
 		});
-		if(currentkey==(gallery_elements.length-1)) var nextkey = 0;
-		else var nextkey = parseInt(currentkey)+1;
+		if(currentkey==(gallery_elements.length-2)) var nextkey = 0;
+		else var nextkey = parseInt(currentkey)+2;
 		if(currentkey==0) var prevkey = parseInt(gallery_elements.length-1);
 		else var prevkey = parseInt(currentkey)-1;
 		document.getElementById('next').addEventListener("click", function() {
@@ -72,6 +72,7 @@ function setGallery(el) {
 		});
 		document.getElementById('prev').addEventListener("click", function() {
 			gallery_elements[prevkey].click();
+
 		});
 	}
 }
