@@ -57,7 +57,7 @@ built with [[jekyll]], hosted with [[github]] x [[netlify]]
 ## 🙋‍♀️What she does these days and where to find her?
 - She keeps herself busy with all her projects!
 - While optimising previous works, she's planning her web VR exhibit
-- She's accepting work as artist / creative director.
+- She's accepting **work as artist / creative director.** 
 - She's residing in Vancouver, BC. Waiting for her booster shot💉
 - She's trying to read and write more about the creative process.
 
