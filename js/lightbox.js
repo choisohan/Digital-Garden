@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function() {
     elements.forEach(element => {
         element.addEventListener("click", function(event) {
             var v = element.querySelector("video").querySelector("source")
-            document.getElementById('lightbox').innerHTML = '<a id="close"></a><a id="next">&rsaquo;</a><a id="prev">&lsaquo;</a><div class="img" style="background: url(\''+v.getAttribute('src')+'\') center center / contain no-repeat;" title="'+this.getAttribute('title')+'" ><video preload="auto" style="width:100%" autoplay muted loop controls><source src="'+v.getAttribute('src')+'" alt="'+this.getAttribute('title')+'" /></video></div><span>'+this.getAttribute('title')+'</span>';
+            document.getElementById('lightbox').innerHTML = '<a id="close"></a><a id="next">&rsaquo;</a><a id="prev">&lsaquo;</a><div class="img" style="background: url(\''+v.getAttribute('src')+'\') center center / contain no-repeat;" title="'+this.getAttribute('title')+'" ><video preload="auto" style="max-width:100% ; max-height:100%" autoplay muted loop controls><source src="'+v.getAttribute('src')+'" alt="'+this.getAttribute('title')+'" /></video></div><span>'+this.getAttribute('title')+'</span>';
             document.getElementById('lightbox').style.display = 'block';
 
             setGallery(this);
@@ -176,3 +176,4 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 });
+

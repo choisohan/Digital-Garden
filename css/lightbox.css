@@ -8,6 +8,10 @@
     transform: translate(-50%,-50%);
     max-width: 100%;
     max-height: 100%;
+
+align-items:center; /* vertical alignment */
+text-align :center; /* horizontal alignment */
+justify-content: center;    /*body horizontal center*/
 }
 #lightbox .img img {opacity: 0; pointer-events: none; width: auto;}
 @media screen and (min-width: 1200px) {
