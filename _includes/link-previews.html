@@ -68,9 +68,9 @@
 
     if (event.target.host === window.location.host) {
       
-      iframe.src = event.target.href
-      if((event.target.href).includes(".mp4")){
-        iframe.src =""
+      
+      if(!(event.target.href).includes(".mp4")){
+        iframe.src = event.target.href
       }
 
       iframe.onload = function() {

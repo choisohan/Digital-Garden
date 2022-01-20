@@ -24,7 +24,7 @@ tag: [journal]
 - Her interests have expanded from modeling to rigging and animation, and now to **building AI for realtime interactive projects**. 
 - Feeling sympathy for digital creatures who can't move their own body, she started scripting simple AI systems for all her characters.
 -These Characters, seen below, can be interacted with via webcam or microphone. She aims to implement realistic behaviors based on animal studies and references. She's developing them in [[Unity]] and [[openCV]]
-{% include gallery.html search="interacting_fullLength_lowRes.mp4,Recording 59.mp4,smilypongo_low.mp4" %}
+{% include gallery.html search="interacting_fullLength_lowRes.mp4,Recording 59.mp4,bobosMonitor.mp4" %}
 - For a behind-the-scenes look at how she creates her interactive animal AI projects, check out this journal 👉[[Story of bobo]]
 
 ---
@@ -44,11 +44,13 @@ tag: [journal]
 - Top 1, 2: AR filter created with facebook's [[sparkAR]]
 - Top 3, 4 : Generative art created with [[P5.js]] and Google's [[firestore]]
 
-## Her project Sites
-- 🎨Happping Musée :  This site, built in 2021, showcases her interative projects online.
+---
 
-- 🌱Happping Garden : Her knowledge database site, also built in 2021. Any notes from her personal projects will be shared here for any other folks who may struggle with the same issues. (The notes can be very messy tho) 
+## Her project Sites
+- [🎨Happping Musée ](http://happping.co):  This site, built in 2021, showcases her interative projects online.
+- [🌱Happping Garden](http://garden.happping.co) : Her knowledge database site, also built in 2021. Any notes from her personal projects will be shared here for any other folks who may struggle with the same issues. (The notes can be very messy tho) 
 built with [[jekyll]], hosted with [[github]] x [[netlify]]
+<img src = "assets/site/musee_main.gif" style="max-width:400px">
 
 ---
 

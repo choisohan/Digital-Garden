@@ -6,6 +6,10 @@ function is_imagelink(url) {
     var p = /([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i;
     return (url.match(p)) ? true : false;
 }
+function is_videoLink(url) {
+    var p = /([a-z\-_0-9\/\:\.]*\.(mp4|avi|mov))/i;
+    return (url.match(p)) ? true : false;
+}
 function is_vimeolink(url,el) {
     var id = false;
     var xmlhttp = new XMLHttpRequest();
@@ -14,7 +18,6 @@ function is_vimeolink(url,el) {
             if (xmlhttp.status == 200) {
                 var response = JSON.parse(xmlhttp.responseText);
                 id = response.video_id;
-                console.log(id);
                 el.classList.add('lightbox-vimeo');
                 el.setAttribute('data-id',id);
 
@@ -96,7 +99,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 element.classList.add('lightbox-youtube');
                 element.setAttribute('data-id',is_youtubelink(url));
             }
+
             if(is_imagelink(url) && !element.classList.contains('no-lightbox')) {
+
                 element.classList.add('lightbox-image');
                 var href = element.getAttribute('href');
                 var filename = href.split('/').pop();
@@ -104,15 +109,33 @@ document.addEventListener("DOMContentLoaded", function() {
                 var name = split[0];
                 element.setAttribute('title',name);
             }
+                        
         }
+
+        var videos = document.querySelectorAll('video');
+        videos.forEach((element)=>{
+            var parent = element.parentNode;
+            href = element.querySelector("source").src
+            if( !parent.classList.contains('no-lightbox')) {
+                parent.classList.add('lightbox-video');
+                var filename = href.split('/').pop();
+                var split = filename.split(".");
+                var name = split[0];
+                parent.setAttribute('title',name);
+            }
+        })
+
+
     });
 
     //remove the clicked lightbox
     document.getElementById('lightbox').addEventListener("click", function(event) {
-        if(event.target.id != 'next' && event.target.id != 'prev'){
+        
+        if(event.target.id != 'next' && event.target.id != 'prev' && !event.target.classList.contains("img") ){
             this.innerHTML = '';
             document.getElementById('lightbox').style.display = 'none';
         }
+         
     });
     
     //add the youtube lightbox on click
@@ -137,6 +160,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
             setGallery(this);
         });
+    });
+
+    //add the video lightbox on click
+    var elements = document.querySelectorAll('.lightbox-video');
+    elements.forEach(element => {
+        element.addEventListener("click", function(event) {
+            var v = element.querySelector("video").querySelector("source")
+            document.getElementById('lightbox').innerHTML = '<a id="close"></a><a id="next">&rsaquo;</a><a id="prev">&lsaquo;</a><div class="img" style="background: url(\''+v.getAttribute('src')+'\') center center / contain no-repeat;" title="'+this.getAttribute('title')+'" ><video preload="auto" style="width:100%" autoplay muted loop controls><source src="'+v.getAttribute('src')+'" alt="'+this.getAttribute('title')+'" /></video></div><span>'+this.getAttribute('title')+'</span>';
+            document.getElementById('lightbox').style.display = 'block';
+
+            setGallery(this);
+        });
+        
     });
 
 });

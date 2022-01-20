@@ -26,16 +26,16 @@
     }
     .equal li{
         flex-grow: 1;
+        padding: 5px;
     }
     .equal li img , .equal li video{
         width:100%;
         align-items:center; 
     }
+    #thumbnail::-webkit-media-controls{
+        display:none !important;
+    }
 
-    video::-webkit-media-controls {
-    display:none !important;
-}
-    
     </style>
 
 {% assign keywords = include.search  | split :"," %}
@@ -64,7 +64,7 @@
 <ul class="{{className}}">
 {% for file in itemArray %}
 
-    <li><a href = "{{ file.path }}">
+    <li>
         {% for extension in imgExt %}
             {% if file.extname == extension %}
                 <img src="{{file.path}}" title= "{{file.path }}">
@@ -73,9 +73,9 @@
 
         {% for extension in videoExt %}
             {% if file.extname == extension %}
-                <video autoplay muted loop controls ><source src="{{file.path}}"></video>
+           <video autoplay muted loop controls id ="thumbnail"><source src="{{file.path}}"></video>
             {% endif %}
         {% endfor %}
-    </a></li>
+    </li>
 {% endfor %}
 </ul>
