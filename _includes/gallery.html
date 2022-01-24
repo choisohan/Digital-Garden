@@ -1,6 +1,6 @@
 <style>
-    .image-gallery {overflow: none; margin-left: -1%!important; display: flex;}
-    .image-gallery li {float: left; display: block; margin: 0 ; flex:1 ; }
+    .image-gallery {overflow: none; margin-left: -1%!important;}
+    .image-gallery li {float: left; display: block; margin: 0 ;  }
     .image-gallery li  {text-align: center; text-decoration: none!important; color: #777; }
     .image-gallery li  span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 0px 0;}
     .image-gallery li img , .image-gallery li video{
@@ -10,23 +10,34 @@
     video:hover{pointer-events: none}
     .grid {
         display: grid;
-        grid-template-columns: repeat( auto-fit, minmax(150px, 1fr));
+        grid-template-columns:  repeat( auto-fit, minmax(150px,1fr)); /* repeat( auto-fit, minmax(150px, 1fr));*/
         grid-gap: 10px;
     }
     .grid li img , .grid li {
-        height:100%;
         aspect-ratio: 1/1;
         object-fit: cover;
         align-items:center; 
     }
+
     .equal{
+        display: flex;
+        flex-wrap:wrap; 
         align-items:center; /* vertical alignment */
         text-align :center; /* horizontal alignment */
-        justify-content: center; 
+        justify-content: center;
     }
     .equal li{
-        flex-grow: 1;
         padding: 5px;
+        flex:1 ;
+    }
+
+    
+    @media only screen and (max-width: 600px) {
+        .equal li{
+            min-width:  500px;
+            padding: 5px;
+            flex:auto ;
+        }
     }
     .equal li img , .equal li video{
         width:100%;

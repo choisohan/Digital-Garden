@@ -11,7 +11,11 @@ gem install jekyll bundler
 ```
 
 # Configuration
-
+```yml
+# deployment // to access  http://192.168.0.15:8080/ over wifi
+host: 192.168.0.15
+port: 8080
+```
 
 # Front Matter
 [offical document](https://jekyllrb.com/docs/permalinks/)

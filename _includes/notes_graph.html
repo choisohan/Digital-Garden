@@ -327,8 +327,8 @@
 
       //console.log(d.last_modified_at)
 
-      node.attr("latest", (d) =>( d.last_modified_at < 200000) ? true: null );
-      text.attr("latest", (d) =>( d.last_modified_at < 200000) ? true: null );
+      node.attr("latest", (d) =>( d.last_modified_at < 600000) ? true: null );
+      text.attr("latest", (d) =>( d.last_modified_at < 600000) ? true: null );
 
 
       simulation.nodes(nodesData);

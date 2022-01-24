@@ -5,7 +5,7 @@ Based on [Setting up your own digital garden with Jekyll](https://maximevaillanc
 
 # Run
 jekyll serve --watch
-http://localhost:4000
+http://192.168.0.15:8080/
 
 # Important
 1. Save image in "assets" folder
