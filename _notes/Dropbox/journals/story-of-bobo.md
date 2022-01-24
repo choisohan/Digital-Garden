@@ -52,7 +52,7 @@ In order to make an orangutan, learning about them was crucial. I tried to colle
 
 ---
 
-### How different they are?
+## How different they are?
 <div class="column">
 <div markdown= "1">
 At the beginning of the project I also didn't realize how different orangutans and chimpanzees are. 

@@ -7,7 +7,9 @@ $border-radius: 4px;
 $font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
   sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: #202020;
   box-sizing: content-box;
@@ -158,10 +160,9 @@ figure{
 
 }
 
-
 a {
   transition: background 300ms;
-  padding: 0 0.1em;
+  padding: 0px;
   text-decoration: none;
   /*border-bottom: 1px solid $color-border;*/
   color: $color-primary;

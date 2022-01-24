@@ -7,6 +7,7 @@ I am using three note taking system
 1. [[notion]] => daily log
 2. [[obsidian]] => wikipage
 3. [[typora]] x [[dropbox]] x [[write1]] => for personal note
+4. [[Google Keep]] => quick note taking for instant thoughts.
 
 ### Desktop Stickynote
 * [[Simple sticky note]] -> [link](https://www.simplestickynotes.com/)

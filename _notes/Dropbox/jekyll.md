@@ -38,7 +38,14 @@ jekyll serve --watch
 https://lunrjs.com/guides/upgrading.html
 
 
+# How to add Table of Contents
+https://github.com/allejo/jekyll-toc
+download toc.html and add this code on the desirable page
+```html
+{% include toc.html html=content %}
+```
 
+----
 
 # Write markdown for jekyll
 

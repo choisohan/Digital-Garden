@@ -1,0 +1,41 @@
+<style>
+#content-table{
+    bottom: 0px;
+    right: 0px;
+    width:500px;
+    color:white;
+    position:fixed;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    opacity: 50%;
+    transition: opacity 0.2s ease-in-out;
+}
+#content-table:hover{
+    opacity: 100%;
+}
+#content-table div.hide{
+    display: none;
+}
+
+</style>
+
+<div id= "content-table">
+    <span onclick="openTable()" style="text-align: right; font-size: 30px;"> 📜 </span>
+
+    <div markdown="1" class="hide" style = "background-color: black; padding:10px;" >
+        {% include toc.html html=content %}
+    </div>
+    
+
+
+</div>
+
+
+<script>
+const div = document.querySelector("#content-table");
+const table = div.querySelector("div");
+function openTable(){
+    table.classList.toggle("hide")
+}
+</script>
