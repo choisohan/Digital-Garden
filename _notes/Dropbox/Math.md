@@ -44,3 +44,8 @@ Math.exp(x) returns the value of Ex
 # Sqrt 
 
 # Gausian 
+
+# Extra
+- [Cross product and Dot product](https://www.youtube.com/watch?v=h0NJK4mEIJU)
+- [Khan Acamemy / Vectors and spaces](https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces)
+- [Dot product](https://www.youtube.com/watch?v=0iNrGpwZwog)

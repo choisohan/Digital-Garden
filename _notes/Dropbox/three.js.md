@@ -57,6 +57,14 @@ const children = [...gltf.scene.children]
 
 ```
 
+# Load Texture
+https://threejs.org/docs/#api/en/loaders/TextureLoader
+```js
+const texture = new THREE.TextureLoader().load('textures/land_ocean_ice_cloud_2048.jpg' )
+
+```
+
+
 
 # 🏃‍♀️Frame Update
 ```javascript
@@ -1111,12 +1119,11 @@ sceneHUD.add( plane );
 
 ```
 
-
-
 ```javascript
- renderer.autoClear = false; 
- renderer.render(scene, camera);
- renderer.render(sceneHUD, cameraHUD); //overlay
+//autoClear : Defines whether the renderer should automatically clear its output before rendering a frame.
+renderer.autoClear = false;
+renderer.render(scene, camera);
+renderer.render(sceneHUD, cameraHUD); //overlay
 ```
 
 
@@ -1681,22 +1688,49 @@ window.addEventListener('pointermove',(event)=>{ /* continuous */})
 ```
 
 
-# Optimize Performance
+# How to optimize Performance
+## 1. FPS drops when zooming in  => Fill Bound
+- [link](https://stackoverflow.com/questions/50071894/debugging-low-fps-in-three-js)
+### Reason 
+There are almost always a ton more pixels than vertices. A single 1920x1080 screen is nearly 2 million pixels yet can be covered in a 3 vertex triangle or a 4 or 6 vertex quad (2 triangles). That means to cover the entire screen the vertex shader ran 3 to 6 times but the fragment shader ran 2 million times!!!
+Sending too much work to the fragment shader is called being **fill bound**.
+The easiest way to see if you're fill bound is to make your canvas tiny, like 2x1 pixels (or just size your browser window really small). If your app starts running fast it's likely fill bound.
+If it's still running slow it could either be geometry bound (the vertex shader is doing too much work) or it's CPU bound (whatever work you're doing on the CPU is taking too long whether that's just calling WebGL commands or computing animation or collisions or physics or whatever).
+In your case you likely are fill bound since you see when all the triangles are small it runs fast (because very few pixels are being drawn) vs when you're zoomed in and lots of triangles cover the screen then it runs slow (because too many pixels are being drawn).
 
+### Solution
+1)  z-buffer : This is a method of "avoiding overdraw". Overdraw is any pixel that is drawn more than once. If you draw a cube in the distance and then draw a sphere up close such that it covers the cube then for every pixel that was rendered for the cube it was "overdrawn" by the sphere pixels. That was a waste of time.
+
+
+## 2. [[LOD]](Level of Detail)
+https://threejs.org/docs/#api/en/objects/LOD
+
+### Preparing LOD in [[Blender]]
+1.  Naming convension
+photographer_LOD0 : highest
+photographer_LOD1 : mid
+photographer_LOD2 : lower
+...
+you can create more if you want
+
+2. Apply "decimate modifier"
+
+### Set up LOD of three.js glb loader
 ```javascript
-
+lod.update(camera)
 ```
 
 
-
+### [[Mipmap]]
+Automatically reduce the rendering detail. 
 ```javascript
-
+texture.minFilter = THREE.NearestMipMapNearestFilter;
+texture.magFilter = THREE.LinearMipMapLinearFilter;
 ```
-
-- 
-
+Or you can set different textures into the mipmap slot
+https://stackoverflow.com/questions/34040978/mipmap-a-planet-in-three-js
 ```javascript
-
+texture.mipmaps[ 1 ] =texture_low;
 ```
 
 

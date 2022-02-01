@@ -53,14 +53,21 @@ if(Cities.includes("Busan")){
 console.log(  Cities.slide(-1)  ) // Get the last element ["Jeju"]
 ```
 
-### 3. Get random Item from Array
+### 3. Get item with index
+❗ Don't use `array.at(0)` because this doesn't work in mobile / safari.
+so you should stick with `array[0]`
+
+Then how to get the last item of array?
+`array[array.length-1]`
+
+### 4. Get random Item from Array
 ```javascript
 
 array[Math.floor(Math.random()*items.length)];
 
 ```
 
-### 4. Issue with array
+### 5. Issue with array
 When I pushed the firebase items to the array, somehow I receive 0 length array.
 
 more to read : [The weird parts of js arrays](https://www.chrisgeelhoed.com/arrays-in-javascript-some-weird-parts/)

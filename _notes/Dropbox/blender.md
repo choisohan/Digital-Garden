@@ -7,12 +7,20 @@ title: blender
 title: blender
 ---
 
+# Community
+https://blender.community/
+
 ## How to change background color
 
 
 ## Navigate
 
 ![[Pasted image 20210722133840.png]]
+
+
+## Pivot Point
+### from 
+
 
 ## How to bake light map
 
