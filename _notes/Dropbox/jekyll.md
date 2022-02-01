@@ -17,6 +17,14 @@ host: 192.168.0.15
 port: 8080
 ```
 
+## Favicon
+_includes/head.html
+```html
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon/favicon-16x16.png">
+```
+
 # Front Matter
 [offical document](https://jekyllrb.com/docs/permalinks/)
 
@@ -138,6 +146,8 @@ note : markdown doens't support column so you should use html and css
 </div>
 
 ```
+
+
 
 ---
 
