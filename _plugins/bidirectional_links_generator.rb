@@ -54,6 +54,18 @@ class BidirectionalLinksGenerator < Jekyll::Generator
         )
       end
 
+      ## Let me see if I can do this.. =_=;;
+      ## ![[img.png]]
+      current_note.content = current_note.content.gsub(
+        /\!\[\[(.*)\]\]/i, # match on the remaining double-bracket links
+        <<~HTML.chomp    # replace with this HTML (\\1 is what was inside the brackets)
+          <span title='' class='invalid-link'>
+          <img src ="\\1">
+          </span>
+            
+        HTML
+      )
+
       # At this point, all remaining double-bracket-wrapped words are
       # pointing to non-existing pages, so let's turn them into disabled
       # links by greying them out and changing the cursor

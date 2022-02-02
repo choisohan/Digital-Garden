@@ -908,8 +908,6 @@ var data = JSON.parse(window.localStorage.getItem('user'));
 
 # web version 8(namespaced) vs web version 8(modular, ESM)
 
-
-
 # 11. Debug
 ### 1. Module parse failed: The top-level-await experiment is not enabled (set experiments.topLevelAwait: true to enabled it)
 

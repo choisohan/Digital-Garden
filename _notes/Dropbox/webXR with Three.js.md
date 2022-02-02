@@ -4,19 +4,15 @@ title: webXR with Three.js
 
 
 # Set up your local dev environment
-An **easy way** to get started is to use the **WebXR Emulator** and  **WebServer for Chrome**. This will allow you to run the **course examples** in a **desktop browser**. The https restriction is **lifted for localhost sites** on **Chrome**.
+An easy way to get started is to use the **WebXR Emulator ** and  **WebServer for Chrome**. 
 
-Even if you are setting up a remote server, using the emulator will allow you to **debug your pages** in the desktop browser. It is **highly recommended** to do as much development using the emulator as possible before starting to test on a **mobile device** or **vr headset**.
+Even if you are setting up a remote server, using the emulator will allow you to ebug your pages in the desktop browser. It is highly recommended to do as much development using the emulator as possible before starting to test on a mobile device or vr headset.
 
 - [webxr-api-emulator](https://chrome.google.com/webstore/detail/webxr-api-emulator/mjddjgeghkdijejnciaefnkjmkafnnje?hl=en)
 - [web-server-for-chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en)
 
-
-
-
-
-
-# Enable webXR
+# Basic Code
+## Enable webXR
 ``` javascript
 import { ARButton } from 'three/examples/jsm/webxr/ARButton.js'
 import { VRButton } from 'three/examples/jsm/webxr/VRButton.js'
@@ -27,27 +23,19 @@ renderer.xr.enabled = true;
 
 function  enableAR(){
     document.body.appendChild(ARButton.createButton(renderer))
-
 }
 function  enableVR(){
     document.body.appendChild(VRButton.createButton(renderer))
-
-    renderer.setAnimationLoop( function () {
-
-        renderer.render( scene, camera );
-    
-    } );
-    
+    renderer.setAnimationLoop(tick) ;
+	//❗instead of window.requestAnimationFrame. Use this way.
+}
+function tick(){
 }
 
 enableVR()
 ```
 
-
-
-
-
-# Controller
+## Controller
 ```javascript
 let controller;
 controller = renderer.xr.getController(0);
@@ -72,4 +60,30 @@ scene.add(controller);
       
       scene.add(mesh);
     }
+```
+
+
+# 
+## Check  if it's VR device
+```js
+console.log(navigator)
+```
+if it's vr, this will return as
+`Navigator {xr: XRSystem....}`
+but if it's not, xr is not included in dictionary
+`Navigator { appCodeName: "Mozilla"...}`
+
+so what you can do is like this
+```js
+if(navigator.xr){
+	console.log("vr enable")
+}
+else{
+	console.log("vr disable")
+}
+```
+
+or you can do this
+```js
+var checkVR =() => { return 'xr' in navigator }
 ```

@@ -1128,7 +1128,17 @@ renderer.render(sceneHUD, cameraHUD); //overlay
 
 
 
+# Multiple Camera for grid view
+[Codepen Example](https://codepen.io/jdrew1303/pen/poyVOyG)
+```js
+renderer.setViewport( 0, 0,canvas.width, canvas.height );
+renderer.render(scene, camera0);
 
+renderer.setViewport(canvas.width/2., .0 ,canvas.width/2., canvas.height/2. );
+renderer.render(scene, camera1);
+
+
+```
 
 
 

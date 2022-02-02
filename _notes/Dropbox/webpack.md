@@ -131,9 +131,23 @@ const templatePath = path.resolve(__dirname,'../projects/'+ item +'/canvas.html'
 ```
 
 
+## Favicon
+1. Install [Favicons Webpack Plugin](https://www.npmjs.com/package/favicons-webpack-plugin)
+```shell
+$ npm install --save-dev favicons favicons-webpack-plugin
 
+```
 
+2. webpack.common.js
+```js
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
+plugins: [
+  new FaviconsWebpackPlugin('static/favicon.png')
+]
+```
+
+---
 
 #  👷‍Trouble Shooting
 1.  ` [webpack-cli] Invalid options object. Dev Server has been initialized using an options object that does not match the API schema.*** options has an unknown property 'disableHostCheck'. These properties are valid:
