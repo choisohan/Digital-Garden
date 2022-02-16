@@ -16,7 +16,7 @@ Chrome -> Developer Tools -> Performance -> Bottom Tap -> Click Three Dot -> "Se
 - Orientation  
 
 
-# Get Mobile Orientation Value
+# Get Mobile Orientation Value with Sensor API
 https://developer.mozilla.org/en-US/docs/Web/API/Window/deviceorientation_event
 ```js
 if (window.DeviceOrientationEvent) {
@@ -37,3 +37,6 @@ var handleOrientationEvent = function(rotateDegrees , frontToBack, leftToRight) 
     console.log( rotateDegrees , frontToBack, leftToRight)
 };
 ```
+
+
+👉for location, check out [[Geolocation]]

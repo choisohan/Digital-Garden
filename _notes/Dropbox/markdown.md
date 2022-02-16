@@ -8,3 +8,10 @@ markdown editors
 - [[obsidiant]] -> good for personal wiki 
 - [[typora]] -> is it seriously fuckying paid?seriously? for what the f
 - [[one markdown]] -> free for ipad
+
+# Let's write
+👉 *tilt* , **BOLD** , <u>underline</u>
+```md
+*tilt*  , **BOLD*  , <u>underline</u>
+```
+

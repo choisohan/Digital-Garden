@@ -43,6 +43,13 @@ npm i @babel/core @babel/preset-env babel-loader
 
 
 
+# Local Host vs Romote Host
+|Local Host |Remot Host|
+|---|---|
+| localhost:8080 | 0.0.0.0:8080 |
+
+
+
 
 # 🖥️Cross browser Test
 

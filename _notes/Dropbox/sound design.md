@@ -1,5 +1,5 @@
 ---
-title:sound design
+title: sound design
 ---
 
 https://youtu.be/5Aib9I5uV3s
