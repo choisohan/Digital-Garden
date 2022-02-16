@@ -20,4 +20,6 @@ title: Netlify
 # 👨‍🔧 Trouble Shooting
 ### 1. [Netlify app builds locally but fails on deploy (case sensitivity)](https://answers.netlify.com/t/support-guide-netlify-app-builds-locally-but-fails-on-deploy-case-sensitivity/10754)
 
-### 2. Insecure mixed content detected
+
+---
+- [ ] Insecure mixed content detected

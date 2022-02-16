@@ -330,3 +330,7 @@ vec4 RadialBlur(in sampler2D map, vec2 uv, float radius){
 
 
 ## 2e2
+
+
+# Inspiration and Community
+https://glslsandbox.com/

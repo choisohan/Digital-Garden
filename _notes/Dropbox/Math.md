@@ -2,6 +2,9 @@
 title: Math
 ---
 https://www.w3schools.com/jsref/jsref_obj_math.asp
+http://www.opengl-tutorial.org/miscellaneous/math-cheatsheet/
+- [ ] Math Cheat Sheet
+
 
 # Floor() / Fract()
 as output the greatest integer less than or equal to x, denoted floor or ⌊x⌋
@@ -44,6 +47,11 @@ Math.exp(x) returns the value of Ex
 # Sqrt 
 
 # Gausian 
+
+# theta( θ )
+Commonly used as a variable to **indicate an**. **angle**.
+
+
 
 # Extra
 - [Cross product and Dot product](https://www.youtube.com/watch?v=h0NJK4mEIJU)

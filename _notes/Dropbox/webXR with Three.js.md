@@ -63,8 +63,56 @@ scene.add(controller);
 ```
 
 
-# 
-## Check  if it's VR device
+## Render Controllers
+[Example](https://github.com/mrdoob/three.js/blob/master/examples/webxr_vr_ballshooter.html) 
+[Example2](https://github.com/mrdoob/three.js/blob/master/examples/webxr_vr_handinput.html)
+
+```js
+
+```
+
+### Controller
+
+```js
+
+```
+
+### Controller Grip
+- [ ] xr 
+
+### Different way to access the controllers
+```js
+// different way to get controller.
+this.session = this.renderer.xr.getSession();
+this.inputSources = this.session.inputSources;
+
+(this.inputSources).forEach(input => {
+	var buttons = input.gamepad.buttons;
+	buttons.forEach( button =>{
+		//"pressed", "touched", "value"
+		console.log(button)
+	   // button.addEventListener("pressed",()=>{console.log(button)})
+	})
+});
+```
+based on -> [repo](https://github.com/paulmasson/paulmasson.github.io/blob/master/webxr-worlds/js/VRController.js)
+
+---
+# WebXRManager
+[Doc](https://threejs.org/docs/#api/en/renderers/webxr/WebXRManager)
+[controller event list](https://developer.mozilla.org/en-US/docs/Web/API/XRInputSourceEvent)
+event List
+- select
+- selectEnd
+- selectstart
+- squeeze
+- squeezeend
+- squeezestart
+
+- [ ] wonder thumbstick input is not avialble for now?
+---
+
+# Check  if it's VR device
 ```js
 console.log(navigator)
 ```
@@ -87,3 +135,29 @@ or you can do this
 ```js
 var checkVR =() => { return 'xr' in navigator }
 ```
+
+
+# Get the button of controller
+- [ ] this doesn't work , maybe not supported yet. 
+```js
+function VRbuttonHandler(evt){
+    var buttons = evt.data.gamepad.buttons ;
+    var selected ;
+    for (var i = 0; i < buttons.length; i++){
+        var pressed = buttons[i].pressed; //pressed, touched, value;
+        if(pressed){
+            selected = i; 
+        }
+    }
+   // return selected
+   return selected
+}
+
+VR.controllers[1].addEventListener( 'selectstart' , (evt)=>{
+	console.log(VRbuttonHandler(evt));//default index is 3
+}  ); 
+```
+
+
+# Ref
+https://medium.com/@darktears/adding-support-for-vr-inputs-with-webxr-and-three-js-235b40beb6f0

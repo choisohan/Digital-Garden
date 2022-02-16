@@ -13,6 +13,10 @@ title: javascript
 [### Hover shows up item
 - [ ] 
 
+# 0. Where to start
+
+
+--- 
 # 1. Variable Types
 
 ## Conditional Variable
@@ -26,6 +30,12 @@ var tmpVar = (true) ? 0 : 1 ; //if' it's true, 0 and else, 1
 
 var a = 1;
 var b = a > 0? (a === 1? "A is 1" : "A is not 1") : (a === 0? "A is zero" : "A is negative");
+```
+
+## Boolean
+### 1. Toggle
+```javascript
+bool ^= true;   //- toggle value.
 ```
 
 ## Array
@@ -572,7 +582,7 @@ http://www.javascripter.net/faq/stylesc.htm
 # 6. User interaction
 ## eventListener()
 ```js
-window.addEvenetListener('mousedown',(e)=>{
+window.addEventListener('mousedown',(e)=>{
 	console.log('mouse is down')
 	
 	console.log(e.target.tagName) //return as "DIV" or "CANVAS"
@@ -582,6 +592,15 @@ window.addEventListener('mousemove',function(e){
 	console.log(e.screenX/ window.innerWidth)
 }, false)
 ```
+
+```js
+document.addEventListener('mousemove',onmousemove);
+function onmousemove(evt){ }
+
+document.removeEventListener('mousemove', onmousemove)
+```
+
+
 
 
 ## Check if it's mobile device
@@ -927,9 +946,10 @@ Promise.resolve('hello world').then((asyncMsg) => { console.log(msg); });
 from [StefanJudis.com](https://www.stefanjudis.com/today-i-learned/top-level-await-is-available-in-node-js-modules/)
 
 
+# Libaries
+- [[Howler.js]] : Audio
+- [zim.js](https://zimjs.com/)
+- [[socket.io]]
 
 
-## Flag Library
-https://github.com/lipis/flag-icons/tree/main/flags/1x1
-https://github.com/lipis/flag-icons/blob/main/country.json
 

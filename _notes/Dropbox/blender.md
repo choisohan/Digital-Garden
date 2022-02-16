@@ -15,7 +15,9 @@ https://blender.community/
 
 ## Navigate
 
-![[Pasted image 20210722133840.png]]
+## Set camera
+
+
 
 
 ## Pivot Point

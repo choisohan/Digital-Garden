@@ -123,3 +123,8 @@ Copy this and go to **google search console / Sitemaps / Add a new sitemap**
 
 ### 🙋‍♀️"How long does it take for google to index a new site?"
 From 4 days and up to 6 months.
+
+
+
+# Inspiration and Community
+https://www.awwwards.com/

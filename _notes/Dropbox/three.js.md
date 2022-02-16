@@ -1,7 +1,4 @@
 ---
----
-
-[---
 title: three.js
 ---
 
@@ -285,8 +282,8 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 ```javascript
 // Controls
-const controls = new OrbitControls(camera, canvas)
-controls.enableDamping = true
+const obitControl = new OrbitControls(camera, canvas)
+obitControl.enableDamping = true
 
 // ...
 
@@ -295,7 +292,7 @@ const tick = () =>
     // ...
 
     // Update controls
-    controls.update()
+    obitControl.update()
 
     // ...
 }
@@ -306,6 +303,36 @@ const tick = () =>
 ```javascript
 
 ```
+
+
+
+# 🚶Move
+tag : [[Vector and Matrix]] 
+[Doc](https://threejs.org/docs/#api/en/math/Matrix4) 
+
+## Matrix4s
+
+Every Object3D has three associated Matrix4s
+- Object3D.matrix
+- Object3D.matrixWorld
+- Object3D.modelViewMatrix : from camera
+
+Cameras has three additional Matrix4s
+- Camera.matrixWorldInverse : the inverse of the camera's matrixWorld
+- Camera.projectionMatrix : Represents the information how to project the scene to clip space.
+- Camera.projectionMatrixInverse
+
+## Extracting  from Matrix4s
+- Vector3.setFromMatrixPosition
+- Vector3.setFromMatrixScale
+- Vector3.setFromRotaionMatrix (or Eulur)
+
+
+## Spherical
+![](https://www.researchgate.net/publication/316068127/figure/fig3/AS:669044097179674@1536523951532/The-spherical-coordinate-system-where-th-0-p-is-the-polar-angle-ph-0-2p-is.png)
+
+
+
 
 # 🕯️Light
 ```javascript
@@ -1648,6 +1675,7 @@ shader.fragmentShader = shader.fragmentShader.replace(
 
 ```
 
+
 ## Adding custom uniforms
 ```javascript
 
@@ -1675,6 +1703,10 @@ tick(){
 
 ```
 
+
+### SpriteMaterial
+```
+``
 
 
 # mousedown event 
