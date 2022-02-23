@@ -253,28 +253,36 @@ checkImage('https://example.com/image.png') // true
 ## Import the other JS script
 https://github.com/jagermesh/html-magnifier  [[html magnifier ]]
 
-```html
-<script type="text/javascript" src="html-magnifier.js"></script>
-```
-to do this to js , this is the way
-
-add export infront of function
-```javascript
+### Export
+```js
+//ES6
 export function HTMLMagnifier(){
 }
 
 ```
+or
+```js
+module.exports = {
+}
+```
 
-and import like this way
+### import
+```html
+<script type="text/javascript" src="html-magnifier.js"></script>
+```
+or
 ```js
 const { HTMLMagnifier } = require('./html-magnifier.js');
-
 var magnifier = new HTMLMagnifier();
-
 magnifier.show();
 
-
 ```
+```js
+//ES6
+import { HTMLMagnifier } from './HTMLMagnifier.js'
+```
+
+
 
 Read [this](https://flexiple.com/javascript-require-vs-import/#:~:text=JavaScript%20module%20is%20a%20file,of%20require%20and%20import%20statements.) to understand require and import
 
@@ -867,7 +875,7 @@ wrapText(myString, 12, 200);
 
 ```
 
-
+🌈
 
 ## Add Input Box
 ```js
