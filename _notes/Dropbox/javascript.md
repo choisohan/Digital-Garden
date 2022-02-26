@@ -94,6 +94,19 @@ Array.from(document.querySelectorAll('input'));
 array.sort((a, b) => a-b );
 ```
 
+### 7. Compare Two array
+check if array item is in other array -> [link](https://bobbyhadz.com/blog/javascript-check-if-array-contains-all-elements-another-array)
+```javascript
+const arr1 = ['pizza', 'cola'];
+const arr2 = ['pizza', 'cake', 'cola'];
+
+const containsAll = arr1.every(item => {
+  return arr2.includes(item);
+});
+```
+
+
+
 ## Dictionary
 [pietschsoft](https://pietschsoft.com/post/2015/09/05/javascript-basics-how-to-create-a-dictionary-with-keyvalue-pairs) 
 ```js
@@ -148,6 +161,16 @@ myString.trim(); //reduce the unnecessary spacebar
 myString.replace("Min","Tom") //return "This is Tom."
 
 
+```
+
+### String to Variable
+```js
+
+function runTest(){
+	console.log( "run Test !")
+}
+
+eval("runTest()") //runTest()
 ```
 
 ## Change the type
@@ -224,7 +247,25 @@ const myFunction = (input) =>{
 console.log(myFunction(3.0)); //return 6.0
 ```
 
+## Loop
+### for 
+```js
 
+```
+
+### While
+```js
+var bool = false;
+var i = 0; 
+
+do {
+	bool = arr2.includes( arr1[i] )  ;
+	i ++; 
+}
+
+while ( !bool  && i< arr1.length);
+
+```
 
 # 3. Handling Files
 [Doc](https://developer.mozilla.org/en-US/docs/Web/API/File/File)
@@ -950,6 +991,14 @@ const asyncMsg = await Promise.resolve('hello world'); console.log(msg);
 //this
 Promise.resolve('hello world').then((asyncMsg) => { console.log(msg); });
 ```
+
+async await in  ForEach
+```javascript
+files.forEach(async (file) => {
+    const contents = await fs.readFile(file, 'utf8')
+})
+```
+
 
 from [StefanJudis.com](https://www.stefanjudis.com/today-i-learned/top-level-await-is-available-in-node-js-modules/)
 

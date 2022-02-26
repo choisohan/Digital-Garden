@@ -63,14 +63,13 @@ tag : [[automation]]
 | apple's Shortcuts | Free, Mobile                    | lots of tedius manual setup to do something simple |
 | ifttt             | Mobile + PC  , Very easy to use | Only 2 automation is free |
 | zapier            | Lots of tools available         | Only 5 automation is free, MS teams integration failed |
-| n8n.io            | Free ([[opensource]])                            | require node.js and experience to set up        |
+| [[n8n]].io            | Free ([[opensource]])                            | require node.js and experience to set up        |
 | MS Power Automate    |        |          only 90 days free        |
 | automate.io   |              |        no netlify yet     |
 | integromat  |                |                           |
 
 
 ## Desktop Autiomation with n8n.io
-tag : [[n8n.io]]
 1. Install [[node.js]] 
 2. command line -> [[npm]] install n8n
 3. npm n8n run

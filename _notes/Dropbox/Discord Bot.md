@@ -88,7 +88,9 @@ client.run(os.environ['TOKEN']
 
 
 ## Method 2.  Github x Heroku
+This is the method I decide d
 https://www.youtube.com/watch?v=qv24S2L1N0k&t=285s
+
 ---
 
 ### Start Scripting
@@ -113,6 +115,17 @@ const TOKEN = process.env.BOT_TOKEN;
 3. Go to 'Settings' on the top -> Reveal Config Vars
 4. add `BOT_TOKEN`
 5. go to deploy -> deploy branch
+
+
+### Run 24/7 on heroku
+https://www.youtube.com/watch?v=OFearuMjI4s
+1. Create file called `Procfile`
+```
+worker: node bot.js
+```
+2. Go to your heroku project-> resources 
+3. turn off web npm start, and turn on new 'worker' option 
+
 
 
 ### Trouble Shoot
